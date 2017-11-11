@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>vue-twitter-counter</title>
+  </head>
+  <body>
+    <main id="app">
+      <textarea v-model="message" rows="3"></textarea>
+      <vue-twitter-counter :current-length="message_length"></vue-twitter-counter>
+      <!-- <vue-twitter-counter :current-length="message_length" :max-length="140" animate></vue-twitter-counter> -->
+    </main>
+    <script src="/dist/app.js"></script>
+  </body>
+</html>
