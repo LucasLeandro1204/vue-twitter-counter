@@ -9,6 +9,9 @@
 </template>
 
 <script>
+  const colorRegex = new RegExp('^#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$');
+  const colorValidator = color => colorRegex.test(color);
+
   export default {
     props: {
       /*
@@ -41,6 +44,7 @@
       underlay: {
         type: String,
         default: '#ccd6dd',
+        validator: colorValidator,
       },
 
       /*
@@ -49,6 +53,7 @@
       safe: {
         type: String,
         default: '#1da1f2',
+        validator: colorValidator,
       },
 
       /*
@@ -57,6 +62,7 @@
       warn: {
         type: String,
         default: '#ffad1f',
+        validator: colorValidator,
       },
 
       /*
@@ -65,6 +71,7 @@
       danger: {
         type: String,
         default: '#e0245e',
+        validator: colorValidator,
       },
 
       /*
@@ -134,6 +141,7 @@
   .VueTwitterCounter {
     svg {
       width: 20px;
+      transform: rotate(-90deg);
     }
   }
 </style>
