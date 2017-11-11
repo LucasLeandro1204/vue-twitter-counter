@@ -97,7 +97,7 @@
       },
 
       counterNumber () {
-        if (this.rest <= this.startsAt) {
+        if (this.rest <= this.warnLength) {
           return this.rest;
         }
 
