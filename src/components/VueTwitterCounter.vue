@@ -117,7 +117,7 @@
       },
 
       dashArray () {
-        const percent = this.currentLength * 50 / this.maxLength;
+        const percent = Math.min(this.currentLength * 50 / this.maxLength, 50);
 
         return `${percent},100`;
       },
