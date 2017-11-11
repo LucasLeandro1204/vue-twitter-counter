@@ -2,7 +2,7 @@
 
 Counter component inspired in Twitter with Vue
 
-![](static/counter-example.gif)
+![](https://github.com/LucasLeandro1204/vue-twitter-counter/raw/master/static/counter-example.gif)
 
 > You can see examples in [here](https://lucasleandro1204.github.io/vue-twitter-counter/)
 
