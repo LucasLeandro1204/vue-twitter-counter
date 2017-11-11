@@ -2,15 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>vue-twitter-counter</title>
+    <title>Vue Twitter Counter</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Counter component inspired in Twitter with Vue">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   </head>
   <body>
     <main id="app">
       <h1>Vue twitter counter</h1>
       <textarea v-model="message" rows="3"></textarea>
       <vue-twitter-counter :current-length="message_length"></vue-twitter-counter>
-      <vue-twitter-counter :current-length="message_length" safe="#29f166" animate></vue-twitter-counter>
-      <vue-twitter-counter :current-length="message_length" :max-length="140" :speed="1000" animate></vue-twitter-counter>
+      <vue-twitter-counter :current-length="message.length" safe="#29f166" animate></vue-twitter-counter>
+      <vue-twitter-counter :current-length="message_length" :danger-at="140" :speed="1000" animate></vue-twitter-counter>
     </main>
     <script src="/dist/app.js"></script>
   </body>
