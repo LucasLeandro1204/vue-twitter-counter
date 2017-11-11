@@ -27,7 +27,7 @@ The only thing you HAVE to do is pass the `current-length` prop.
 ### Props list
 
 | Prop          | Type    | Default  | Description                                |
-|:------=------:|:-------:|:--------:|:------------------------------------------:|
+|:-------------:|:-------:|:--------:|:------------------------------------------:|
 | warnLength    | Number  | 20       | The min rest to show the warns             |
 | dangerAt      | Number  | 280      | The length to be in danger                 |
 | currentLength | Number  | REQUIRED | The current length of whatever you want to |
