@@ -15,23 +15,23 @@
   export default {
     props: {
       /*
-       * The min length to start show the counter number.
+       * The min rest to show the warns.
        */
-      startsAt: {
+      warnLength: {
         type: Number,
         default: 20,
       },
 
       /*
-       * The max length.
+       * The length to be in danger.
        */
-      maxLength: {
+      dangerAt: {
         type: Number,
         default: 280,
       },
 
       /*
-       * The current length of whatever you wan't to.
+       * The current length of whatever you want to.
        */
       currentLength: {
         type: Number,
@@ -93,7 +93,7 @@
 
     computed: {
       rest () {
-        return this.maxLength - this.currentLength;
+        return this.dangerAt - this.currentLength;
       },
 
       counterNumber () {
@@ -105,7 +105,7 @@
       },
 
       currentColor () {
-        if (this.startsAt < this.rest) {
+        if (this.warnLength < this.rest) {
           return this.safe;
         }
 
@@ -117,7 +117,7 @@
       },
 
       dashArray () {
-        const percent = Math.min(this.currentLength * 50 / this.maxLength, 50);
+        const percent = Math.min(this.currentLength * 50 / this.dangerAt, 50);
 
         return `${percent},100`;
       },
