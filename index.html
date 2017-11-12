@@ -21,7 +21,7 @@
       <textarea v-model="message" rows="3"></textarea>
       <vue-twitter-counter :current-length="message_length"></vue-twitter-counter>
       <vue-twitter-counter :current-length="message.length" safe="#29f166" animate></vue-twitter-counter>
-      <vue-twitter-counter :current-length="message_length" :danger-at="140" :speed="1000" animate></vue-twitter-counter>
+      <vue-twitter-counter :current-length="message_length" :danger-at="140" :speed="1000" animate round></vue-twitter-counter>
     </main>
     <script src="dist/app.js"></script>
   </body>

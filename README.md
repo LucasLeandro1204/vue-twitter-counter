@@ -35,6 +35,7 @@ The only thing you HAVE to do is pass the `current-length` prop.
 | safe          | String  | #1da1f2  | Safe color                                 |
 | warn          | String  | #ffad1f  | Warn color                                 |
 | danger        | String  | #e0245e  | Danger color                               |
+| round         | Boolean | false    | Round progress circle edges                |
 | animate       | Boolean | false    | Animate the progress circle                |
 | speed         | Number  | 150      | The animation speed in ms                  |
 

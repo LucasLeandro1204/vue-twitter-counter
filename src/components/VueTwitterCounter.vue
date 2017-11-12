@@ -3,7 +3,7 @@
     <span v-if="counterNumber !== false" :style="{ color: isInDanger ? danger : 'inherit' }">{{ counterNumber }}</span>
     <svg viewBox="0 0 20 20" preserveAspectRatio="xMidYMid meet">
       <circle cx="50%" cy="50%" r="8" fill="none" stroke-width="1" :stroke="underlay"></circle>
-      <circle cx="50%" cy="50%" r="8" fill="none" stroke-width="2" :stroke="currentColor" :stroke-dasharray="dashArray" :style="animateStyle"></circle>
+      <circle cx="50%" cy="50%" r="8" fill="none" stroke-width="2" :stroke-linecap="linecap" :stroke="currentColor" :stroke-dasharray="dashArray" :style="animateStyle" v-show="currentLength > 0"></circle>
     </svg>
   </div>
 </template>
@@ -75,6 +75,14 @@
       },
 
       /*
+       * Round progress circle edges.
+       */
+      round: {
+        type: Boolean,
+        default: false,
+      },
+
+      /*
        * Animate the progress circle.
        */
       animate: {
@@ -132,6 +140,10 @@
             transition: `${this.speed}ms`,
           };
         }
+      },
+
+      linecap () {
+        return this.round ? 'round' : 'inherit';
       },
     },
   };
