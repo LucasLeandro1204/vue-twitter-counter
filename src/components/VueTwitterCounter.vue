@@ -4,7 +4,7 @@
     <svg viewBox="0 0 20 20" preserveAspectRatio="xMidYMid meet">
       <circle cx="50%" cy="50%" r="8" fill="none" stroke-width="1" :stroke="underlay"></circle>
       <transition name="fade">
-        <circle cx="50%" cy="50%" r="8" fill="none" stroke-width="2" :stroke-linecap="linecap" :stroke="currentColor" :stroke-dasharray="dashArray" :style="animateStyle" v-show="currentLength > 0"></circle>
+        <circle cx="50%" cy="50%" r="8" fill="none" stroke-width="2" :stroke-linecap="linecap" :stroke="currentColor" :stroke-dasharray="dashArray" :style="animateStyle" v-show="show"></circle>
       </transition>
     </svg>
   </div>
@@ -143,6 +143,10 @@
         }
       },
 
+      show () {
+        return currentLength > 0;
+      },
+
       linecap () {
         return this.round ? 'round' : 'inherit';
       },
@@ -158,7 +162,8 @@
     }
   }
 
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  .fade-enter,
+  .fade-leave-to {
     opacity: 0;
   }
 </style>
