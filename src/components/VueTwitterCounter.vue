@@ -3,14 +3,15 @@
     <span v-if="counterNumber !== false" :style="{ color: isInDanger ? danger : 'inherit' }">{{ counterNumber }}</span>
     <svg viewBox="0 0 20 20" preserveAspectRatio="xMidYMid meet">
       <circle cx="50%" cy="50%" r="8" fill="none" stroke-width="1" :stroke="underlay"></circle>
-      <circle cx="50%" cy="50%" r="8" fill="none" stroke-width="2" :stroke-linecap="linecap" :stroke="currentColor" :stroke-dasharray="dashArray" :style="animateStyle" v-show="currentLength > 0"></circle>
+      <transition name="fade">
+        <circle cx="50%" cy="50%" r="8" fill="none" stroke-width="2" :stroke-linecap="linecap" :stroke="currentColor" :stroke-dasharray="dashArray" :style="animateStyle" v-show="currentLength > 0"></circle>
+      </transition>
     </svg>
   </div>
 </template>
 
 <script>
-  const colorRegex = new RegExp('^#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$');
-  const colorValidator = color => colorRegex.test(color);
+  const colorValidator = color => /#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$/.test(color);
 
   export default {
     props: {
@@ -155,5 +156,9 @@
       width: 20px;
       transform: rotate(-90deg);
     }
+  }
+
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
   }
 </style>
