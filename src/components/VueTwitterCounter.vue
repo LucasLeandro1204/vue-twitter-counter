@@ -144,7 +144,7 @@
       },
 
       show () {
-        return currentLength > 0;
+        return this.currentLength > 0;
       },
 
       linecap () {
