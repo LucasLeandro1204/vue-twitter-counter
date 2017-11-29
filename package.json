@@ -1,7 +1,7 @@
 {
   "name": "vue-twitter-counter",
   "description": "Counter component inspired in Twitter with Vue",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "author": "Lucas Leandro <lucasleandro1204@gmail.com>",
   "license": "MIT",
   "private": false,
